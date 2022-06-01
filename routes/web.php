@@ -24,3 +24,26 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+Route::middleware(['auth', 'user-access:head_work'])->group(function () {
+    // Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/testlogin', function () {
+        return 'test';
+    });
+});
+  
+
+Route::middleware(['auth', 'user-access:hr'])->group(function () {
+    // Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/xx', function () {
+        return 'xx';
+    });
+});
+  
+
+Route::middleware(['auth', 'user-access:manager'])->group(function () {
+    // Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+});
