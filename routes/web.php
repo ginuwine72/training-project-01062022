@@ -19,8 +19,7 @@ Auth::routes();
 
 Route::get('/report/{employee_id}', [App\Http\Controllers\ReportController::class, 'Report'])->name('report');
 Route::post('/report/save', [App\Http\Controllers\ReportController::class, 'SaveReport'])->name('savereport');
-
-Route::get('/report/users/{user_id}', [App\Http\Controllers\ReportController::class, 'Report_User'])->name('report_user');
+Route::get('/report/users/{employees_id}', [App\Http\Controllers\ReportController::class, 'Report_Employees'])->name('report_employees');
 
 
 
