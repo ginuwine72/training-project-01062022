@@ -139,15 +139,10 @@
 
                 
                 <div class="container-fluid">
-
-                    
                     <h1 class="h3 mb-2 text-gray-800">รายงานข้อมูลคะแนนประจำวัน</h1>
-                    
-
-                    
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">ตารางข้อมูลพนักงาน</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">ตารางผลคะแนนประเมินพนักงาน(รายวัน)</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -157,7 +152,8 @@
                                             <th>E_ID</th>
                                             <th>Fullname</th>
                                             <th>Position</th>
-                                            <th>Assetment</th>
+                                            <th>Point</th>
+                                            <th>Comment</th>
                                         </tr>
                                     </thead>
                                    
@@ -166,29 +162,23 @@
                                             <td>รหัสพนักงาน</td>
                                             <td>ชื่อ</td>    
                                             <td>ตำแหน่ง</td>
+                                            <td>0</td>
                                             <td>
-                                                <a href="#" class="btn btn-success btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-check"></i>
-                                                    </span>
-                                                    <span class="text">เข้าฟอร์มประเมิน</span>
-                                                </a>
-                                                <a href="employee_details" class="btn btn-info btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-info-circle"></i>
-                                                    </span>
-                                                    <span class="text ">ข้อมูลพนักงาน</span>
-                                                 </a>    
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
+                                <a href="x" class="btn btn-info btn-icon-split">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-info-circle"></i>
+                                                    </span>
+                                                    <span class="text ">ดาวน์โหลดข้อมูลรายละเอียดคะแนนรายบุคคล(รายวัน)</span>
+                                                 </a>    
                             </div>
                         </div>
                     </div>
 
                 </div>
-                
 
             </div>
             

@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
 
     <meta charset="utf-8">
@@ -167,6 +164,7 @@
                                             <th>Fullname</th>
                                             <th>Position</th>
                                             <th>Assetment</th>
+                                            <th>menu_list</th>
                                         </tr>
                                     </thead>
                                    
@@ -189,6 +187,20 @@
                                                     <span class="text ">ข้อมูลพนักงาน</span>
                                                  </a>    
                                             </td>
+
+                                            <td> <a href="#" class="btn btn-success btn-circle"> 
+                                                    <i class="fas fa-check"></i>
+
+                                                 <a href="#" class="btn btn-warning btn-circle">
+                                                    <i class="fas fa-exclamation-triangle"></i>
+
+                                                 <a href="#" class="btn btn-danger btn-circle">
+                                                    <i class="fas fa-trash"></i>
+                                    </a>   
+
+                                    </a>
+                                            </td>
+                                    </a>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -258,5 +270,3 @@
     <script src="js/demo/datatables-demo.js"></script>
 
 </body>
-
-</html>

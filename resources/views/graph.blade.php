@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
 
@@ -63,8 +61,8 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="x">Day Reports</a>
-                        <a class="collapse-item" href="x">Mounth Reports</a>
+                        <a class="collapse-item" href="day_report">Day Reports</a>
+                        <a class="collapse-item" href="mounth_report">Mounth Reports</a>
                     </div>
                 </div>
             </li>
