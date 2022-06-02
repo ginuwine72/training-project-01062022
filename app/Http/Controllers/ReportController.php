@@ -38,8 +38,6 @@ class ReportController extends Controller
 
 
         return 'test';
-
-
     }
 
     public function Report(Request $request)
@@ -49,7 +47,6 @@ class ReportController extends Controller
         $employees = Employee::where('id',$employee_ids)
         ->first();
 
-      
 
         if($employees){
             return view('report')
@@ -89,7 +86,7 @@ class ReportController extends Controller
             ->with('error', 'วันนี้พนักงานดังกล่าวได้รับการประเมินแล้ว');
 
         }else{
-            
+
         $Report = new Report;
         $Report->id_user = 8;
         $Report->id_em = $employee_id;
@@ -136,9 +133,10 @@ class ReportController extends Controller
             return view('auth.login')
             ->with('error', 'ไม่พบรหัสพนักงานในระบบไม่สามารถประเมินได้');
         }
-
-
     }
+
+
+
     
 
 }
