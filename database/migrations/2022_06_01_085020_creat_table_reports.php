@@ -27,7 +27,8 @@ return new class extends Migration
             $table->integer('r-partic')->default(0);
             $table->integer('r_performance')->default(0);
             $table->integer('r_ot')->default(0);
-            $table->integer('due_report')->default(0);            
+            $table->integer('due_report')->default(0); 
+            $table->integer('sum_point');           
             
         });
     }
