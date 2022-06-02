@@ -13,31 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
+Route::get('/report/{employee_id}', [App\Http\Controllers\ReportController::class, 'Report'])->name('report');
+Route::post('/report/save', [App\Http\Controllers\ReportController::class, 'SaveReport'])->name('savereport');
 
 
 Route::middleware(['auth', 'user-access:head_work'])->group(function () {
-    // Route::get('/home', [HomeController::class, 'index'])->name('home');
-    Route::get('/testlogin', function () {
-        return 'test';
-    });
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    
 });
   
-
 Route::middleware(['auth', 'user-access:hr'])->group(function () {
-    // Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/xx', function () {
         return 'xx';
     });
@@ -45,5 +34,5 @@ Route::middleware(['auth', 'user-access:hr'])->group(function () {
   
 
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
-    // Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+    
 });
