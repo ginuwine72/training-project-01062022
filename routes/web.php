@@ -16,8 +16,12 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 
+
 Route::get('/report/{employee_id}', [App\Http\Controllers\ReportController::class, 'Report'])->name('report');
 Route::post('/report/save', [App\Http\Controllers\ReportController::class, 'SaveReport'])->name('savereport');
+
+Route::get('/report/users/{user_id}', [App\Http\Controllers\ReportController::class, 'Report_User'])->name('report_user');
+
 
 
 Route::middleware(['auth', 'user-access:head_work'])->group(function () {
@@ -27,12 +31,15 @@ Route::middleware(['auth', 'user-access:head_work'])->group(function () {
 });
   
 Route::middleware(['auth', 'user-access:hr'])->group(function () {
+
     Route::get('/xx', function () {
         return 'xx';
     });
+
 });
   
 
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
+
     
 });

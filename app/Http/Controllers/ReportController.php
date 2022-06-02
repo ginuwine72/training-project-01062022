@@ -7,6 +7,7 @@ use App\Models\Report;
 use App\Models\Employee;
 use View;
 use Session;
+use Carbon\Carbon;
 
 class ReportController extends Controller
 {
@@ -16,8 +17,14 @@ class ReportController extends Controller
      *
      * @return void
      */
+
+    protected $date;
+
     public function __construct()
     {
+     
+        $this->date =  date('Y-m-d');
+      
         // $this->middleware('auth');
     }
 
@@ -59,6 +66,8 @@ class ReportController extends Controller
 
     public function SaveReport(Request $request)
     {
+        
+        $employee_id = $request->employee_id;
         $r_lose = $request->r_lose;
         $r_bye = $request->r_bye;
         $r_late = $request->r_late;
@@ -70,9 +79,22 @@ class ReportController extends Controller
         $r_performance = $request->r_performance;
         $r_ot = $request->r_ot;
 
+        $employees = Report::where('id_em',$employee_id)
+        ->orderBy('id', 'desc')
+        ->whereDate('created_at', '=', $this->date)
+        ->count();
+
+        if($employees > 0){
+
+            return redirect()
+            ->back()
+            ->with('error', 'วันนี้พนักงานดังกล่าวได้รับการประเมินแล้ว');
+
+        }else{
+
         $Report = new Report;
         $Report->id_user = 8;
-        $Report->id_em = 8;
+        $Report->id_em = $employee_id;
         $Report->r_lose = $r_lose;
         $Report->r_bye = $r_bye;
         $Report->r_late = $r_late;
@@ -84,14 +106,29 @@ class ReportController extends Controller
         $Report->r_performance = $r_performance;
         $Report->r_ot = $r_ot;
         $Report->sum_point = 0;
-
         $Report->save();
-
         
         return redirect()
         ->back()
         ->with('success', 'บันทึกข้อมูลเรียบร้อย');
+
+        }
     }
 
+
+    public function Report_User(Request $request)
+    {
+        $user_id = $request->user_id;
+
+
+
+        return 'test';
+
+
+    }
+
+
+
+    
 
 }
