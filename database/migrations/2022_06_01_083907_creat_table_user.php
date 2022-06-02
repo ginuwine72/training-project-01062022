@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('user', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->char('username');
-            $table->int('password');
+            $table->string('password');
             $table->char('fullname');
             $table->char('dep');
             $table->char('role');
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        Schema::drop('user');
     }
 };

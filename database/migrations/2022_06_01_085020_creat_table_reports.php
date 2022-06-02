@@ -13,21 +13,21 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('employee', function (Blueprint $table) {
-            $table->id();
-            $table->bigIncrements('id_user');
-            $table->bigIncrements('id_em');
-            $table->int('r_lose')->default(0);
-            $table->int('r_bye')->default(0);
-            $table->int('r_late')->default(0);
-            $table->int('r_work')->default(0);
-            $table->int('r_dress')->default(0);
-            $table->int('r_clean')->default(0);
-            $table->int('r_meeting')->default(0);
-            $table->int('r-partic')->default(0);
-            $table->int('r_performance')->default(0);
-            $table->int('r_ot')->default(0);
-            $table->int('due_report')->default(0);            
+        Schema::create('reports', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->foreign('id_user')->references('id')->on('user');
+            $table->foreign('id_em')->references('id')->on('employee');
+            $table->integer('r_lose')->default(0);
+            $table->integer('r_bye')->default(0);
+            $table->integer('r_late')->default(0);
+            $table->integer('r_work')->default(0);
+            $table->integer('r_dress')->default(0);
+            $table->integer('r_clean')->default(0);
+            $table->integer('r_meeting')->default(0);
+            $table->integer('r-partic')->default(0);
+            $table->integer('r_performance')->default(0);
+            $table->integer('r_ot')->default(0);
+            $table->integer('due_report')->default(0);            
             
         });
     }
@@ -39,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::drop('employee');
+        Schema::drop('reports');
     }
 };
