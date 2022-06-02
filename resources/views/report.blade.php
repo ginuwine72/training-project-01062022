@@ -15,8 +15,14 @@
                                     {{ Session::get('success') }}
                             </div>
                             @endif
+                            @if (Session::has('error'))
+                            <div class="alert alert-danger">
+                                    {{ Session::get('error') }}
+                            </div>
+                            @endif
                             <form method="post" action="{{ route('savereport') }}">
                             @csrf
+                            <input type="hidden" value="{{ $employee->id }}" name="employee_id" id="employee_id">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="card mb-4">
@@ -224,7 +230,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary mb-3" type="submit">ประเมิน</button>
+                                <button class="btn btn-primary mb-3" type="submit">บันทึกประเมิน</button>
                             </div>
                         </form>
 
