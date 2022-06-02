@@ -74,9 +74,6 @@
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Charts Report</span></a>
             </li>
-
-          
-
             
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -103,14 +100,8 @@
                             <i class="fa fa-bars"></i>
                         </button>
                     </form>
-
-                   
-                    
                     <ul class="navbar-nav ml-auto">
 
-                        
-
-                        
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -150,7 +141,7 @@
                 <div class="container-fluid">
 
                     
-                    <h1 class="h3 mb-2 text-gray-800">ข้อมูลพนักงาน</h1>
+                    <h1 class="h3 mb-2 text-gray-800">รายงานข้อมูลคะแนนประจำวัน</h1>
                     
 
                     

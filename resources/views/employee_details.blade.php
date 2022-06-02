@@ -42,6 +42,7 @@
             </a>
 
             
+            
             <hr class="sidebar-divider my-0">
             
            
@@ -75,7 +76,7 @@
                     <span>Charts Report</span></a>
             </li>
 
-          
+           
 
             
             <hr class="sidebar-divider d-none d-md-block">
@@ -147,59 +148,120 @@
                 
 
                 
-                <div class="container-fluid">
+                  
+                  <div class="container-fluid">
 
-                    
-                    <h1 class="h3 mb-2 text-gray-800">ข้อมูลพนักงาน</h1>
-                    
 
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">ประวัติพนักงาน</h1>
+</div>
+
+<div class="row">
+
+    
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            รูปประจำตัว</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">......</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                           รหัสพนักงาน </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">....</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            ชื่อพนักงาน</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">.....</div>
+                    </div>
                     
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">ตารางข้อมูลพนักงาน</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+   
+    <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-info shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">คะแนนประเมินงาน
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>E_ID</th>
-                                            <th>Fullname</th>
-                                            <th>Position</th>
-                                            <th>Assetment</th>
-                                        </tr>
-                                    </thead>
-                                   
-                                    <tbody>
-                                        <tr>
-                                            <td>รหัสพนักงาน</td>
-                                            <td>ชื่อ</td>    
-                                            <td>ตำแหน่ง</td>
-                                            <td>
-                                                <a href="#" class="btn btn-success btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-check"></i>
-                                                    </span>
-                                                    <span class="text">เข้าฟอร์มประเมิน</span>
-                                                </a>
-                                                <a href="employee_details" class="btn btn-info btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-info-circle"></i>
-                                                    </span>
-                                                    <span class="text ">ข้อมูลพนักงาน</span>
-                                                 </a>    
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <div class="row no-gutters align-items-center">
+                            <div class="col-auto">
+                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">...%</div>
+                            </div>
+                            <div class="col">
+                                <div class="progress progress-sm mr-2">
+                                    <div class="progress-bar bg-info" role="progressbar"
+                                        style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                        aria-valuemax="100"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
+                    <div class="col-auto">
+                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    </div>
                 </div>
-                
-
             </div>
+        </div>
+</div>
+
+<div class="row">
+
+    <div class="col-lg-6">
+
+        
+        
+
+        
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">ว่าง</h6>
+            </div>
+            <div class="card-body">
+                ...
+            </div>
+        </div>
+
+    </div>
+
+  
+
+</div>
+
+</div>
+
+
+</div>
+
             
 
             

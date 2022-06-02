@@ -42,6 +42,7 @@
             </a>
 
             
+             
             <hr class="sidebar-divider my-0">
             
            
@@ -62,8 +63,8 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="day_report">Day Reports</a>
-                        <a class="collapse-item" href="mounth_report">Mounth Reports</a>
+                        <a class="collapse-item" href="x">Day Reports</a>
+                        <a class="collapse-item" href="x">Mounth Reports</a>
                     </div>
                 </div>
             </li>
@@ -75,7 +76,8 @@
                     <span>Charts Report</span></a>
             </li>
 
-          
+
+           
 
             
             <hr class="sidebar-divider d-none d-md-block">
@@ -144,65 +146,30 @@
                     </ul>
 
                 </nav>
-                
+           
+<div class="container-fluid">
+    <h1 class="h3 mb-2 text-gray-800">กราฟ</h1>
+         <p class="mb-4"> กราฟ</a>.</p>
 
-                
-                <div class="container-fluid">
 
-                    
-                    <h1 class="h3 mb-2 text-gray-800">ข้อมูลพนักงาน</h1>
-                    
-
-                    
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">ตารางข้อมูลพนักงาน</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>E_ID</th>
-                                            <th>Fullname</th>
-                                            <th>Position</th>
-                                            <th>Assetment</th>
-                                        </tr>
-                                    </thead>
-                                   
-                                    <tbody>
-                                        <tr>
-                                            <td>รหัสพนักงาน</td>
-                                            <td>ชื่อ</td>    
-                                            <td>ตำแหน่ง</td>
-                                            <td>
-                                                <a href="#" class="btn btn-success btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-check"></i>
-                                                    </span>
-                                                    <span class="text">เข้าฟอร์มประเมิน</span>
-                                                </a>
-                                                <a href="employee_details" class="btn btn-info btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-info-circle"></i>
-                                                    </span>
-                                                    <span class="text ">ข้อมูลพนักงาน</span>
-                                                 </a>    
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                  <!-- Bar Chart -->
+                  <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-bar">
+                                        <canvas id="myBarChart"></canvas>
+                                    </div>
+                                    <hr>
+                                </div>
                             </div>
+
                         </div>
-                    </div>
-
-                </div>
-                
-
-            </div>
-            
-
-            
+    </div>
+</div>
+</div>
+</div>
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
