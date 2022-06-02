@@ -25,10 +25,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/main', function () {
-    return view('main');
-});
-
 Route::get('employee_details', function (){
     return view('employee_details');
 });
@@ -44,3 +40,8 @@ Route::get('day_report', function (){
 Route::get('mounth_report', function (){
     return view('mounth_report');
 });
+
+Route::get('/main', [App\Http\Controllers\EmpController::class, 'Emp'])->name('Emp');
+
+Route::get('/chart/month', [App\Http\Controllers\ChartController::class, 'Chart_Month']);
+

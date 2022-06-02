@@ -1,26 +1,6 @@
-<head>
+@extends('layouts.master')
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>OEAS</title>
-
-    
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-    
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
-</head>
+@section('content')
 
 <body id="page-top">
 
@@ -145,74 +125,10 @@
 
                 
                 <div class="container-fluid">
-
-                    
-                    <h1 class="h3 mb-2 text-gray-800">ข้อมูลพนักงาน</h1>
-                    
-
-                    
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">ตารางข้อมูลพนักงาน</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>E_ID</th>
-                                            <th>Fullname</th>
-                                            <th>Position</th>
-                                            <th>Assetment</th>
-                                            <th>menu_list</th>
-                                        </tr>
-                                    </thead>
-                                   
-                                    <tbody>
-                                    @foreach ($employees as $employee)
-                                        <tr>
-                                            <td>{{ $employee->id }}</td>
-                                            <td>{{ $employee->fullname }}</td>    
-                                            <td>{{ $employee->dep }}</td>
-                                            <td>
-                                                <a href="#" class="btn btn-success btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-check"></i>
-                                                    </span>
-                                                    <span class="text">เข้าฟอร์มประเมิน</span>
-                                                </a>
-                                                <a href="employee_details/{{ $employee->id }}" class="btn btn-info btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-info-circle"></i>
-                                                    </span>
-                                                    <span class="text ">ข้อมูลพนักงาน</span>
-                                                 </a>    
-                                            </td>
-
-                                            <td> <a href="#" class="btn btn-success btn-circle"> 
-                                                    <i class="fas fa-check"></i>
-
-                                                 <a href="#" class="btn btn-warning btn-circle">
-                                                    <i class="fas fa-exclamation-triangle"></i>
-
-                                                 <a href="#" class="btn btn-danger btn-circle">
-                                                    <i class="fas fa-trash"></i>
-                                    </a>   
-
-                                    </a>
-                                            </td>
-                                    </a>
-                                         @endforeach
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
 
                 </div>
-                
-
+                </div>
             </div>
             
 
@@ -270,5 +186,6 @@
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <script src="js/demo/datatables-demo.js"></script>
-
+    
 </body>
+@endsection
