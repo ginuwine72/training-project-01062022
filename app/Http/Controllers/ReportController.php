@@ -38,8 +38,6 @@ class ReportController extends Controller
 
 
         return 'test';
-
-
     }
 
     public function Report(Request $request)
@@ -48,6 +46,7 @@ class ReportController extends Controller
 
         $employees = Employee::where('id',$employee_ids)
         ->first();
+
 
         if($employees){
             return view('report')
@@ -58,10 +57,6 @@ class ReportController extends Controller
             ->with('error', 'ไม่พบรหัสพนักงานในระบบไม่สามารถประเมินได้');
         }
 
-       
-
-      
-      
     }
 
     public function SaveReport(Request $request)
@@ -84,7 +79,7 @@ class ReportController extends Controller
         ->whereDate('created_at', '=', $this->date)
         ->count();
 
-        if($employees > 0){
+        if($employees < 0){
 
             return redirect()
             ->back()
@@ -102,10 +97,10 @@ class ReportController extends Controller
         $Report->r_dress = $r_dress;
         $Report->r_clean = $r_clean;
         $Report->r_meeting = $r_meeting;
-        $Report->r_partic = $r_partic ;
+        $Report->r_partic = $r_partic;
         $Report->r_performance = $r_performance;
         $Report->r_ot = $r_ot;
-        $Report->sum_point = 0;
+        $Report->sum_point = $r_lose+$r_bye+$r_late+$r_work+$r_dress+$r_clean+$r_meeting+$r_partic+$r_performance+$r_ot;
         $Report->save();
         
         return redirect()
@@ -116,15 +111,28 @@ class ReportController extends Controller
     }
 
 
-    public function Report_User(Request $request)
+    public function Report_Employees(Request $request)
     {
-        $user_id = $request->user_id;
+      
+        $employees_id = $request->employees_id;
+
+        $employees = Employee::where('id',$employees_id)
+        ->first();
+
+        $fetch_em_id = $employees->id;
+
+        $employee_report = Report::where('id_em',$fetch_em_id)
+        ->get();
 
 
-
-        return 'test';
-
-
+        if($employees){
+            return view('employees.employees')
+            ->with('employee_reports',  $employee_report)
+            ->with('employee', $employees);
+        }else{
+            return view('auth.login')
+            ->with('error', 'ไม่พบรหัสพนักงานในระบบไม่สามารถประเมินได้');
+        }
     }
 
 

@@ -21,6 +21,6 @@ class UserAccess
         }
           
         return response()->json(['คุณไม่มีสิทธิ์เข้าถึงหน้านี้']);
-        /* return response()->view('errors.check-permission'); */
+  
     }
 }
