@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreign('id_user')->references('id')->on('user');
-            $table->foreign('id_em')->references('id')->on('employee');
+            $table->integer('id_user');
+            $table->integer('id_em');
             $table->integer('r_lose')->default(0);
             $table->integer('r_bye')->default(0);
             $table->integer('r_late')->default(0);
@@ -28,7 +28,7 @@ return new class extends Migration
             $table->integer('r_performance')->default(0);
             $table->integer('r_ot')->default(0);
             $table->integer('due_report')->default(0); 
-            $table->integer('sum_point');           
+            $table->integer('sum_point');        
             
         });
     }
