@@ -3,60 +3,50 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controller\EmployeeController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
+Route::get('/', [App\Http\Controllers\HomeController::class, 'home_login']);
+Route::get('/report/send/{employee_id}', [App\Http\Controllers\ReportController::class, 'Report'])->name('report');
+Route::post('/report/send/save', [App\Http\Controllers\ReportController::class, 'SaveReport'])->name('savereport');
+Route::get('/report/employees/{employees_id}', [App\Http\Controllers\ReportController::class, 'Report_Employees'])->name('report_employees');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/analysis/day', [App\Http\Controllers\AnalysisController::class, 'Analysis_Day'])->name('analysis_day');
+Route::get('/analysis/month', [App\Http\Controllers\AnalysisController::class, 'Analysis_Month'])->name('analysis_month');
 
-Auth::routes();
+Route::get('/chart/avg', [App\Http\Controllers\ChartController::class, 'Chart_Avg'])->name('chart_avg');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+Route::get('/employee/add', [App\Http\Controllers\EmployeeController::class, 'Employee_Add'])->name('employee_add');
+Route::post('/employee/add/send', [App\Http\Controllers\EmployeeController::class, 'Employee_Send'])->name('employee_send');
+Route::post('/employee/delete/{employees_id}', [App\Http\Controllers\EmployeeController::class, 'Employee_Delete'])->name('employee_delete');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/day_report', function (){
-    return view('day_report');
+Route::get('/me', [App\Http\Controllers\MeController::class, 'Auth']);
+
+
+Route::middleware(['auth', 'user-access:head_work'])->group(function () { //role: 0
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    
 });
+  
+Route::middleware(['auth', 'user-access:hr'])->group(function () { //role: 1
 
-// Route::get('/profile', function (){
-//     return view('employee_details');
-// });
+    Route::get('/xx', function () {
+        return 'xx';
+    });
 
-Route::get('/day', function (){
-    return App\DayReport::all();
 });
+  
 
-Route::get('employee', function (){
-    return view('employee');
-});
+Route::middleware(['auth', 'user-access:manager'])->group(function () { //role: 2
+
 
 Route::get('/reports',[App\Http\Controllers\ReportsController::class,'index']);
 
 Route::get('/employee',[App\Http\Controllers\EmployeeController::class,'index']);
 
-Route::middleware(['auth:sanctum'.'verified'])->get('/dashboard',function(){
-    $employee=DB::table('employee')->get();
-    return view('dashboard',compact('users'));
-});
-Route::get('/day_reports/{em_id}', [App\Http\Controllers\Day_reportController::class, 'DayReport']);
-
 Route::get('/employee_details/{em_id}', [App\Http\Controllers\EmployeeDetailsController::class, 'EmployeeDetails']);
 
 Route::get('/chart/day', [App\Http\Controllers\ChartController::class, 'Chart_Day']);
 
+});
