@@ -1,92 +1,9 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+@extends('layouts.master')
 
-    <title>OEAS</title>
-
-    
-
-    <link href={{ asset('vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"')}}'>
-    <link
-        href={{ asset('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i')}}
-        rel="stylesheet">
-
-    
-    <link href={{ asset('css/sb-admin-2.min.css" rel="stylesheet')}}>
-
-    
-    <link href={{ asset('vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet')}}>
-
-
-</head>
+@section('content')
 
 <body id="page-top">
 
-    
-    <div id="wrapper">
-
-        
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3"> ระบบประเมินพนักงาน </div>
-            </a>
-
-            
-            <hr class="sidebar-divider my-0">
-            
-           
-            <li class="nav-item active">
-                <a class="nav-link" href="main">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
-
-            <hr class="sidebar-divider"></hr>
-
-            
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Assessment Report</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="day_report">Day Reports</a>
-                        <a class="collapse-item" href="mounth_report">Mounth Reports</a>
-                    </div>
-                </div>
-            </li>
-            <hr class="sidebar-divider"></hr>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="graph">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts Report</span></a>
-            </li>
-            
-            <hr class="sidebar-divider d-none d-md-block">
-
-            
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-        </ul>
-        
-
-        
         <div id="content-wrapper" class="d-flex flex-column">
 
             
@@ -101,8 +18,14 @@
                             <i class="fa fa-bars"></i>
                         </button>
                     </form>
+
+                   
+                    
                     <ul class="navbar-nav ml-auto">
 
+                        
+
+                        
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -140,10 +63,10 @@
 
                 
                 <div class="container-fluid">
-                    <h1 class="h3 mb-2 text-gray-800">รายงานข้อมูลคะแนนประจำวัน</h1>
+                    <h1 class="h3 mb-2 text-gray-800">รายงานข้อมูลคะแนนประเดือน</h1>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">ตารางผลคะแนนประเมินพนักงาน(รายวัน)</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">ตารางผลคะแนนประเมินพนักงาน(รายเดือน)</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -168,30 +91,19 @@
                                             </td>
                                         </tr>
                                     </tbody>
-
-                                    <tbody>
-                                    @foreach ($day_report as $row)
-                                        <tr>
-                                            <td class="text-right">{{ $row->id }}</td>
-                                            <td class="text-right">{{ $row->fullname }}</td>
-                                            <td class="text-right">{{ $row->dep }}</td>
-                                            <td></td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-
                                 </table>
                                 <a href="x" class="btn btn-info btn-icon-split">
                                                     <span class="icon text-white-50">
                                                         <i class="fas fa-info-circle"></i>
                                                     </span>
-                                                    <span class="text ">ดาวน์โหลดข้อมูลรายละเอียดคะแนนรายบุคคล(รายวัน)</span>
+                                                    <span class="text ">ดาวน์โหลดข้อมูลรายละเอียดคะแนนรายบุคคล (เดือน)</span>
                                                  </a>    
                             </div>
                         </div>
                     </div>
 
                 </div>
+                
 
             </div>
             
@@ -209,7 +121,7 @@
         </div>
         
 
-    </div>
+
     
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
@@ -251,6 +163,4 @@
 
     <script src="js/demo/datatables-demo.js"></script>
 
-</body>
-
-</html>
+@endsection

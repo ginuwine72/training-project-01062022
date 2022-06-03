@@ -43,6 +43,16 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () { //role: 
 
 Route::get('/reports',[App\Http\Controllers\ReportsController::class,'index']);
 
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+Route::get('/main', [App\Http\Controllers\EmpController::class, 'Emp'])->name('main');
+
+Route::get('/chart/month', [App\Http\Controllers\ChartController::class, 'Chart_Month']);
+
+
 Route::get('/employee',[App\Http\Controllers\EmployeeController::class,'index']);
 
 Route::get('/employee_details/{em_id}', [App\Http\Controllers\EmployeeDetailsController::class, 'EmployeeDetails']);
