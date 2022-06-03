@@ -51,8 +51,7 @@ class AnalysisController extends Controller
     public function Analysis_Month()
     {
 
-        $Analysis_Month = Report::select(DB::raw("SUM(sum_point) as count"), 
-        DB::raw("MONTHNAME(date_report) as month_name"))
+        $Analysis_Month = Report::select(DB::raw("SUM(sum_point) as count"), DB::raw("MONTHNAME(date_report) as month_name"))
         ->whereYear('date_report', date('Y'))
         ->groupBy(DB::raw("Month(date_report)"))
         ->get('count', 'month_name');

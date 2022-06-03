@@ -238,10 +238,8 @@
                                     <tbody>
                                         @foreach ($analysis_months as $analysis_month)
                                         <tr>
-                                           
                                             <td>{{ $analysis_month->month_name }}</td>
                                             <td>{{ $analysis_month->count }}</td>
-                                            
                                         </tr>
                                         @endforeach
                                     </tbody>

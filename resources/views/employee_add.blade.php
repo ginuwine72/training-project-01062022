@@ -221,8 +221,41 @@
               
                 <div class="container-fluid">
 
-                 
-                  
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">เพิ่มพนักงาน</h6>
+                        </div>
+                        <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="p-1">
+                            @include('flash-message')
+                            <form method="POST" action="{{ route('employee_send') }}">
+                                @csrf
+                                <div class="form-group">
+                                  <label for="exampleInputEmail1">ชื่อ-นามสกุล</label>
+                                  <input type="text" class="form-control" id="exampleInputEmail1" name="fullname" placeholder="ชื่อนามสกุล">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">ตำแหน่ง</label>
+                                    <select class="form-control" name="dep">
+                                        <option value="DEVELOP">DEVELOP</option>
+                                        <option value="DESIGNER">DESIGNER</option>
+                                        <option value="BACKEND">BACKEND</option>
+                                        <option value="FRONTEND">FRONTEND</option>
+                                        <option value="FULLSTACK">FULLSTACK</option>
+                                      </select>
+                                </div>
+
+
+                                <button type="submit" class="btn btn-success btn-lg btn-block">บันทึก</button>
+                              </form>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
                     
                 </div>
               
