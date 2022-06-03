@@ -921,10 +921,10 @@ orange circle
             <div class="double_wrapper02 orange02"><div class="double_wrapper01 orange01"></div></div>
         </div>
         <div class="name">
-            <p>ระบบประเมิน<br>พนักงาน</br></p>
+            <p>ระบบประเมิน<br>พนักงาน<br></p>
             <span class="name_circle01"></span>
             <span class="name_circle02"></span>
-            <div style="width:100%;text-align:center;"><button class="glow-on-hover" type="button">เข้าสู่ระบบ</button></div>
+            <div style="width:100%;text-align:center;"><button onclick="window.location='{{ route('login') }}'" class="glow-on-hover" type="button">เข้าสู่ระบบ</button></div>
         </div>
     </div>
 </body>

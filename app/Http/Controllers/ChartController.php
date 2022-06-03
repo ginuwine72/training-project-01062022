@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Report;
 use App\Models\Employee;
+use App\Models\Chart;
 use Illuminate\Support\Facades\DB;
 
 class ChartController extends Controller

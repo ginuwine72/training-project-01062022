@@ -25,12 +25,9 @@
 </head>
 <body>
     <div id="app">
-        @yield('menu')
+      
 
         @yield('content')
-
-   
-
 
 
     <script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>

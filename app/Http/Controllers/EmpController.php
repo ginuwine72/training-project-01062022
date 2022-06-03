@@ -12,8 +12,6 @@ class EmpController extends Controller
 
         $employee = Emp::All();
 
-        //  return $employee; 
-
         return view('main')
              ->with('employees', $employee);
     

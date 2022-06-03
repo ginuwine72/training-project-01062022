@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Employee;
 use App\Models\Report;
-use Illuminate\Support\Facades\auth;
 use Illuminate\Support\Facades\DB;
 use View;
 use Session;
@@ -15,7 +14,7 @@ class EmployeeController extends Controller
 {
     public function index()
     {
-        $employee=Employee::all();
+        $employee = Employee::all();
         return view('employee'); 
     }
   
@@ -36,7 +35,7 @@ class EmployeeController extends Controller
             $Employee->dep = $dep;
             $Employee->save();
     
-            return redirect()->route('employee_add')
+            return redirect()->route('main')
             ->with('success','บันทึกข้อมูลเรียบร้อย');
           
           } catch (\Exception $e) {
@@ -53,8 +52,8 @@ class EmployeeController extends Controller
             $Employee = Employee::find($request->employees_id);
             $Employee->delete();
     
-            return redirect()->route('employee_add')
-            ->with('success','ลบข้อมูลเรียบร้อย');
+            return redirect()->route('main')
+            ->with('error','ลบข้อมูลเรียบร้อย');
           
           } catch (\Exception $e) {
               return $e->getMessage();
