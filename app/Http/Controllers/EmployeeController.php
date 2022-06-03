@@ -3,18 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Report;
 use App\Models\Employee;
+use App\Models\Report;
+use Illuminate\Support\Facades\auth;
+use Illuminate\Support\Facades\DB;
 use View;
 use Session;
 use Auth;
 
 class EmployeeController extends Controller
 {
+    public function index()
+    {
+        $employee=Employee::all();
+        return view('employee'); 
+    }
+  
     public function Employee_Add()
     {
         return view('employee_add');
     }
+  
 
     public function Employee_Send(Request $request)
     {
@@ -53,10 +62,4 @@ class EmployeeController extends Controller
         
     }
 
-
-   
-
-
-
-    
 }

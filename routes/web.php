@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controller\EmployeeController;
 
 Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'home_login']);
@@ -39,7 +40,13 @@ Route::middleware(['auth', 'user-access:hr'])->group(function () { //role: 1
 
 Route::middleware(['auth', 'user-access:manager'])->group(function () { //role: 2
 
-    Route::get('/xxx', function () {
-        return 'xxx';
-    });
+
+Route::get('/reports',[App\Http\Controllers\ReportsController::class,'index']);
+
+Route::get('/employee',[App\Http\Controllers\EmployeeController::class,'index']);
+
+Route::get('/employee_details/{em_id}', [App\Http\Controllers\EmployeeDetailsController::class, 'EmployeeDetails']);
+
+Route::get('/chart/day', [App\Http\Controllers\ChartController::class, 'Chart_Day']);
+
 });

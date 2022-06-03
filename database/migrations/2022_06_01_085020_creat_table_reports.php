@@ -24,10 +24,11 @@ return new class extends Migration
             $table->integer('r_dress')->default(0);
             $table->integer('r_clean')->default(0);
             $table->integer('r_meeting')->default(0);
-            $table->integer('r-partic')->default(0);
+            $table->integer('r_partic')->default(0);
             $table->integer('r_performance')->default(0);
             $table->integer('r_ot')->default(0);
             $table->integer('date_report')->default(0); 
+            $table->timestamps(); 
             $table->integer('sum_point');        
             
         });
