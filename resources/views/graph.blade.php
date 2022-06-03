@@ -45,9 +45,9 @@
             
            
             <li class="nav-item active">
-                <a class="nav-link" href="main">
+                <a class="nav-link" href="{{ route('main') }}">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                    <span>Main</span></a>
             </li>
 
             <hr class="sidebar-divider"></hr>

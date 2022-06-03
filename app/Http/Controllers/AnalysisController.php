@@ -59,10 +59,8 @@ class AnalysisController extends Controller
         $labels = $Analysis_Month->keys();
         $data = $Analysis_Month->values();
 
-        // return $Analysis_Month;
-
-       return view('analysis.analysis_month')
-       ->with('analysis_months',  $Analysis_Month);
+        return view('analysis.analysis_month')
+        ->with('analysis_months',  $Analysis_Month);
 
     }
 

@@ -79,7 +79,7 @@ class ReportController extends Controller
         ->whereDate('created_at', '=', $this->date)
         ->count();
 
-        if($employees < 0){
+        if($employees > 0){
 
             return redirect()
             ->back()
@@ -103,9 +103,9 @@ class ReportController extends Controller
         $Report->sum_point = $r_lose+$r_bye+$r_late+$r_work+$r_dress+$r_clean+$r_meeting+$r_partic+$r_performance+$r_ot;
         $Report->save();
         
-        return redirect()
-        ->back()
-        ->with('success', 'บันทึกข้อมูลเรียบร้อย');
+
+        return redirect()->route('main')
+        ->with('success','บันทึกข้อมูลเรียบร้อย');
 
         }
     }
