@@ -37,7 +37,8 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Username</span>
                                 <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                    src="/img/undraw_profile.svg">
+                                    
                             </a>
                             
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -76,30 +77,32 @@
     <h1 class="h3 mb-0 text-gray-800">ประวัติพนักงาน</h1>
 </div>
 
-<div class="row">
 
-
-    <div class="col-xl-4 col-md-6 mb-4">
+    <div class="col-xl-4 col-md-6 mb-4 rounded mx-auto d-block">
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        <div class="text-x font-weight-bold text-primary text-uppercase mb-1">
                             รูปประจำตัว</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                            <img class="img-profile rounded-circle rounded mx-auto d-block" width="147" height="150"  
+                                src="{{ $employees ->img }}">
+                        <div class="h5 mb-1 font-weight-bold text-gray-800"></div>
+                           
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    
-    <div class="col-xl-3 col-md-6 mb-4">
+
+    <div class="row">
+    <div class="col-xl-4 col-md-6 mb-4">
         <div class="card border-left-success shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                        <div class="text-x font-weight-bold text-success text-uppercase mb-2">
                            รหัสพนักงาน </div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $employees->id }}</div>
                     </div>
@@ -109,12 +112,12 @@
     </div>
 
     
-    <div class="col-xl-3 col-md-6 mb-4">
+    <div class="col-xl-4 col-md-6 mb-4">
     <div class="card border-left-warning shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                        <div class="text-x font-weight-bold text-warning text-uppercase mb-1">
                             ชื่อพนักงาน</div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $employees->fullname }}</div>
                     </div>
@@ -123,20 +126,19 @@
             </div>
         </div>
     </div>
-    </div>
-   
 
    
-    <div class="col-xl-3 col-md-6 mb-4">
+
+    <div class="col-xl-4 col-md-6 mb-4">
     <div class="card border-left-info shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">คะแนนประเมินงาน
+                        <div class="text-x font-weight-bold text-info text-uppercase mb-1">คะแนนประเมินงาน
                         </div>
                         <div class="row no-gutters align-items-center">
                             <div class="col-auto">
-                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">...%</div>
+                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ $employees->sum_point }}%</div>
                             </div>
                             <div class="col">
                                 <div class="progress progress-sm mr-2">
@@ -155,13 +157,11 @@
         </div>
 </div>
 
+</div> 
+
 <div class="row">
 
-    <div class="col-lg-6">
-
-        
-        
-
+    <div class="col-lg-12">
         
         <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -225,20 +225,20 @@
     </div>
 
     
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="/js/sb-admin-2.min.js"></script>
 
     
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-    <script src="js/demo/datatables-demo.js"></script>
+    <script src="/js/demo/datatables-demo.js"></script>
 
 </body>
 @endsection

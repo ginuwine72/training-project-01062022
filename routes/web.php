@@ -54,6 +54,7 @@ Route::middleware(['auth:sanctum'.'verified'])->get('/dashboard',function(){
     $employee=DB::table('employee')->get();
     return view('dashboard',compact('users'));
 });
+Route::get('/day_reports/{em_id}', [App\Http\Controllers\Day_reportController::class, 'DayReport']);
 
 Route::get('/employee_details/{em_id}', [App\Http\Controllers\EmployeeDetailsController::class, 'EmployeeDetails']);
 

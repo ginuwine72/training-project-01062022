@@ -17,14 +17,14 @@ return new class extends Migration
             array(
                 'fullname' => 'สม',
                 'dep' => 'พนักงาน',
-                'img' => ''
+                'img' => 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'
         )
     );
         DB::table('employee')->insert(
             array(
                 'fullname' => 'สมเจต',
                 'dep' => 'พนักงาน',
-                'img' => ''
+                'img' => 'https://img.freepik.com/free-vector/woman-profile-cartoon_18591-58480.jpg'
         )
     );
 
@@ -32,28 +32,28 @@ return new class extends Migration
             array(
                 'fullname' => 'สมส้ม',
                 'dep' => 'พนักงาน',
-                'img' => ''
+                'img' => 'https://img.freepik.com/free-vector/man-profile-cartoon_18591-58482.jpg?w=2000'
         )
     );
         DB::table('employee')->insert(
             array(
                 'fullname' => 'สมสม',
                 'dep' => 'พนักงาน',
-                'img' => ''
+                'img' => 'https://m.media-amazon.com/images/I/31Cd9UQp6eL._SX355_.jpg'
         )
     );
     DB::table('employee')->insert(
         array(
             'fullname' => 'สมศรี',
             'dep' => 'พนักงาน',
-            'img' => ''
+            'img' => 'https://m.media-amazon.com/images/I/41miU+cgrLL.jpg'
     )
 );
     DB::table('employee')->insert(
         array(
             'fullname' => 'สมหญิง',
             'dep' => 'พนักงาน',
-            'img' => ''
+            'img' => 'https://m.media-amazon.com/images/I/41r0oAaPp0L.jpg'
     )
 );
 
@@ -61,28 +61,28 @@ return new class extends Migration
         array(
             'fullname' => 'สมชาย',
             'dep' => 'พนักงาน',
-            'img' => ''
+            'img' => 'https://m.media-amazon.com/images/I/41mSIgdsHvL.jpg'
     )
 );
     DB::table('employee')->insert(
         array(
             'fullname' => 'สมปอง',
             'dep' => 'พนักงาน',
-            'img' => ''
+            'img' => 'https://cdn3.vectorstock.com/i/1000x1000/01/77/businesswoman-character-avatar-icon-vector-12800177.jpg'
     )
 );
 DB::table('employee')->insert(
     array(
         'fullname' => 'สมหมาย',
         'dep' => 'พนักงาน',
-        'img' => ''
+        'img' => 'https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png'
 )
 );
 DB::table('employee')->insert(
     array(
         'fullname' => 'สมศักดิ์',
         'dep' => 'พนักงาน',
-        'img' => ''
+        'img' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToIHOstd3H0WMh_xtRJxW0uX0sACmKxawgvFEaYGNzqJ5JBxUK-FT2s4hA04MXHLKNHuI&usqp=CAU'
 )
 );
     }

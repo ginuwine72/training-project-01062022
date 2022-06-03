@@ -37,7 +37,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Username</span>
                                 <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                    src="/img/undraw_profile.svg">
                             </a>
                             
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -66,7 +66,7 @@
 
                 </nav>
                 
-
+                 <h1 class="h1 mb-2 text-gray-800">&nbsp; &nbsp;กราฟ รายวัน</h1>
                 
                   
                   <div class="container-fluid">
@@ -120,19 +120,32 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+
+    <div class="chart-container" style="position:relative; height: 40vh; width:0vw">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
 <script type="text/javascript">
-  
+
       var labels =  {{ Js::from($labels) }};
       var users =  {{ Js::from($data) }};
   
       const data = {
         labels: labels,
         datasets: [{
-          label: 'My First dataset',
-          backgroundColor: 'rgb(255, 99, 132)',
-          borderColor: 'rgb(255, 99, 132)',
+          label: 'คะแนนรายวัน',
+          backgroundColor: 
+                    ['rgba(240,128,128)',
+                     'rgba(255,165,0)',
+                     'rgba(50,205,50)',
+                     'rgba(0,255,255)',
+                     'rgba(138,43,226)',
+                     'rgba(238,130,238)',
+                     'rgba(220,20,60)'
+                    ],
+        //   borderColor: 'rgb(255, 99, 132)',
           data: users,
         }]
       };
@@ -149,21 +162,22 @@
       );
   
 </script>
+</div>
     
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="/js/sb-admin-2.min.js"></script>
 
     
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-    <script src="js/demo/datatables-demo.js"></script>
+    <script src="/js/demo/datatables-demo.js"></script>
 
 </body>
 @endsection
