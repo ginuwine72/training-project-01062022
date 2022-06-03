@@ -29,8 +29,8 @@ Route::get('employee_details', function (){
     return view('employee_details');
 });
 
-Route::get('graph', function (){
-    return view('graph');
+Route::get('welcome', function (){
+    return view('welcome');
 });
 
 Route::get('day_report', function (){
@@ -41,7 +41,7 @@ Route::get('mounth_report', function (){
     return view('mounth_report');
 });
 
-Route::get('/main', [App\Http\Controllers\EmpController::class, 'Emp'])->name('Emp');
+Route::get('/main', [App\Http\Controllers\EmpController::class, 'Emp'])->name('main');
 
 Route::get('/chart/month', [App\Http\Controllers\ChartController::class, 'Chart_Month']);
 

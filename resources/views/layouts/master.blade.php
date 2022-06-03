@@ -3,8 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
@@ -17,9 +15,6 @@
     
     <link href="{{ asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
     <script src="{{ asset('chart.js/chart.js') }}"></script>
-    
-
-    
     <link href="{{ asset ('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
     
 </head>
@@ -41,7 +36,7 @@
             
            
             <li class="nav-item active">
-                <a class="nav-link" href="main">
+                <a class="nav-link" href="{{ route('main') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tables</span></a>
             </li>

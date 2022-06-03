@@ -70,6 +70,12 @@
                 <a class="nav-link" href="graph">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Charts Report</span></a>
+                    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="day_report">Day Reports</a>
+                        <a class="collapse-item" href="mounth_report">Mounth Reports</a>
+                    </div>
+                </div>
             </li>
 
           
