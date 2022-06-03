@@ -220,31 +220,27 @@
                 </nav>
               
                 <div class="container-fluid">
-                    <h1 class="h3 mb-2 text-gray-800">รายงานข้อมูลคะแนนประจำวัน</h1>
+                    <h1 class="h3 mb-2 text-gray-800">รายงานข้อมูลคะแนนประจำเดือน</h1>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">ตารางผลคะแนนประเมินพนักงาน(ประจำวัน)</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">ตารางผลคะแนนประเมินพนักงาน(ประจำเดือน)</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable_ans_day" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>ประจำวันที่</th>
-                                            <th>รหัสพนักงาน</th>
-                                            <th>ชื่อ-นามสกุล</th>
-                                            <th>ตำแหน่ง</th>
+                                            <th>ประจำเดือน</th>
+                                        
                                             <th>คะแนนทั้งหมด</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($analysis_days as $analysis_day)
+                                        @foreach ($analysis_months as $analysis_month)
                                         <tr>
-                                            <td>{{ DateThai($analysis_day->date_report_last) }}</td>
-                                            <td>{{ $analysis_day->id_em }}</td>
-                                            <td>{{ $analysis_day->fullname }}</td>    
-                                            <td>{{ $analysis_day->dep }}</td>
-                                            <td>{{ $analysis_day->sum_point_day }}</td>
+                                           
+                                            <td>{{ $analysis_month->month_name }}</td>
+                                            <td>{{ $analysis_month->count }}</td>
                                             
                                         </tr>
                                         @endforeach
